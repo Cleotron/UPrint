@@ -1,0 +1,54 @@
+LOCAL DEVELOPMENT
+
+Create the project virtualenv:
+
+$ python3 -m venv .venv
+$ . .venv/bin/activate
+$ pip install -U pip
+$ pip install -r requirements.txt
+
+Activate an existing virtualenv:
+
+$ . .venv/bin/activate
+
+Set up the database:
+
+$ python manage.py migrate
+
+Run the development web server:
+
+$ python manage.py runserver
+
+HEROKU DEPLOYMENT
+
+Set up the Heroku command line tool by following the instructions at:
+
+https://devcenter.heroku.com/articles/heroku-cli
+
+Create an Heroku account if you do not have one.
+
+Create an Heroku application:
+
+$ heroku create  # this might prompt you to press a key to open a browser to log in to Heroku
+
+Create a secret key:
+
+$ python3 manage.py shell
+>>> from django.core.management.utils import get_random_secret_key
+>>> get_random_secret_key()
+'...........'
+>>> exit()
+
+$ heroku config:set DJANGO_SECRET_KEY='.....'  # copy from above
+
+Set up ALLOWED_HOSTS:
+
+$ heroku domains
+=== xxx-xxx-12345 Heroku Domain
+xxx-xxx-12345.herokuapp.com
+
+$ heroku config:set ALLOWED_HOST_HEROKU='xxx-xxx-12345.herokuapp.com'  # copy from above
+
+Deploy to Heroku:
+
+$ git push heroku master
