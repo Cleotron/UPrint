@@ -52,3 +52,11 @@ $ heroku config:set ALLOWED_HOST_HEROKU='xxx-xxx-12345.herokuapp.com'  # copy fr
 Deploy to Heroku:
 
 $ git push heroku master
+
+MISC
+
+If you add a new dependency to the project by running pip install, update the requirements.txt file:
+
+$ pip freeze >requirements.txt
+
+Edit requirements.txt and remove the line "pkg-resources==0.0.0".
