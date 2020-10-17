@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'uprintapp',
+    'import_export',
 ]
 
 MIDDLEWARE = [
