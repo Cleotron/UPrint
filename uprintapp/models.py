@@ -9,3 +9,15 @@ class Pyme:
         huella = self.huella
         return huella
 
+
+class Pyme_DB(models.Model):
+
+    raz_soc = models.TextField()
+    giro = models.TextField()
+    l_agua = models.FloatField()
+    coste_agua = models.FloatField()
+    kW = models.FloatField()
+    coste_luz = models.FloatField()
+    l_gas = models.IntegerField()
+    coste_gas = models.FloatField()
+    
