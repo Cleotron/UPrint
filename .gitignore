@@ -4,6 +4,5 @@
 .vscode
 db.sqlite3
 __pycache__
-/static
 .DS_Store
 .idea/

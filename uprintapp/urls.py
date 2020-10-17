@@ -4,7 +4,7 @@ from clientesapp import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('formpymes', views.consultaPyme, name='fpyme'),
-    path('huellapymes', views.huellaPyme, name='rpyme'),
+    path('huellapymes', views.huellaPyme, name='hpyme'),
 
 ]
 
