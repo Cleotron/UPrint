@@ -1,0 +1,16 @@
+html,
+body {
+	min-height: 100vh;
+}
+
+.header {
+	min-height: 180px;
+}
+.btn-custom {
+	background-color: rgb(2, 132, 132);
+	color: #fff;
+}
+
+.btn-custom:hover {
+	background-color: rgb(45, 204, 205);
+}
