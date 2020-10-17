@@ -8,7 +8,7 @@ def index(request):
 
 def formulario(request):
     # Esta es la home, donde ofrecemos algo de informacion sobre la huella de carbono
-    return render(request, "form-pymes.html")
+    return render(request, "pymes/form-pymes.html")
 
 def consultaPyme(request):
     name = request.POST['name']
