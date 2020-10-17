@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from clientesapp.models import Cliente
+from uprintapp.models import Pyme
 from datetime import datetime
 
 def index(request):
@@ -16,7 +16,7 @@ def consultaPyme(request):
     consumo_gas = request.POST['gas']
     #con el numero de empleados podemos saber el tipo de empresa (micro, pequeña, mediana, gran empresa)
 
-    args = (consumo_luz, consumo_agua, consumo_gas, empleados, sector)
+    args = (name, consumo_luz, consumo_agua, consumo_gas, empleados, sector)
 
     pyme = Pyme()
     huella = pyme.calcularHuella(args)
@@ -26,6 +26,3 @@ def consultaPyme(request):
     }
     return render(request, "clientes/huella.html", contexto)
 
-
-def huellaPyme():
-    pass
