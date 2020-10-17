@@ -6,6 +6,10 @@ def index(request):
     # Esta es la home, donde ofrecemos algo de informacion sobre la huella de carbono
     return render(request, "home.html")
 
+def formulario(request):
+    # Esta es la home, donde ofrecemos algo de informacion sobre la huella de carbono
+    return render(request, "form-pymes.html")
+
 def consultaPyme(request):
     name = request.POST['name']
     empleados = request.POST['empleados']
@@ -16,7 +20,7 @@ def consultaPyme(request):
     consumo_gas = request.POST['gas']
     #con el numero de empleados podemos saber el tipo de empresa (micro, pequeña, mediana, gran empresa)
 
-    args = (name, consumo_luz, consumo_agua, consumo_gas, empleados, sector)
+    args = (name, empleados, sector, consumo_luz, consumo_agua, consumo_gas)
 
     pyme = Pyme()
     huella = pyme.calcularHuella(args)
@@ -24,5 +28,5 @@ def consultaPyme(request):
         'resultado': huella,
         'alta': datetime.now()
     }
-    return render(request, "clientes/huella.html", contexto)
+    return render(request, "pymes/huella.html", contexto)
 
