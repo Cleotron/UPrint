@@ -25,7 +25,7 @@ def consultaPyme(request):
 
     pyme = Pyme()
     (huella, h_luz, h_agua, h_gas) = pyme.calcularHuella(args)
-    (media_luz, media_agua, media_gas) = mediaSector(sector)
+    (media_luz, media_agua, media_gas) = pyme.mediaSector(sector)
 
 
     contexto = {

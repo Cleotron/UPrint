@@ -8,9 +8,9 @@ class Pyme:
 
     def calcularHuella(self,args):
         # calculamos la huella de la pyme con el consumo que nos proporciona el usuario multiplicado por el factor
-        h_luz = args[0]*0.001*0.505
-        h_agua = args[1]*1
-        h_gas=args[2]*1
+        h_luz = args[0]*0.001*0.505*12
+        h_agua = args[1]*1*6
+        h_gas=args[2]*11.7*12
 
         huella = h_luz + h_agua + h_gas
 
