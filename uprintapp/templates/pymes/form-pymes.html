@@ -2,8 +2,6 @@
 <html lang="en">
 	{% load static%}
 	<!-- directiva de seguridad para los datos que se envian -->
-	{% csrf_token %}
-
 	<head>
 		<meta charset="UTF-8" />
 		<title>UPrint from BBVA</title>
@@ -33,6 +31,7 @@
 					</div>
 					<div class="form-container">
 						<form method="POST" class="form">
+							{% csrf_token %}
 							<ul class="form-list">
 								<li class="item name">
 									<label for="name"
