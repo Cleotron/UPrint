@@ -6,11 +6,11 @@ class Pyme:
         self.huella = 0
 
 
-    def calcularHuella(self,args):
+    def calcularHuella(self,empleados, consumo_luz, consumo_agua, consumo_gas):
         # calculamos la huella de la pyme con el consumo que nos proporciona el usuario multiplicado por el factor
-        h_luz = args[0]*0.001*0.505*12
-        h_agua = args[1]*1*6
-        h_gas=args[2]*11.7*12
+        h_luz = args[1]*0.001*0.505*12/args[0]
+        h_agua = args[2]*1*6/args[0]
+        h_gas=args[3]*11.7*12/args[0]
 
         huella = h_luz + h_agua + h_gas
 
@@ -24,7 +24,7 @@ class Pyme:
 
         media_sector = gas + agua + elect
         
-        return media_sector, media_luz, media_agua, media_gas
+        return media_sector*12, media_luz*12, media_agua*6, media_gas*12
 
 
 class Pyme_DB(models.Model):
