@@ -34,20 +34,23 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	max-width: 70%;
+
 	margin: 0 auto;
 }
 
 .container {
 	min-height: 60vh;
+	min-width: 100%;
 	background-color: #072146;
 	padding: 0 20px 10px;
+	border-radius: 1em;
 }
 
 .title {
 	font-size: 1.5rem;
 	font-weight: 700;
 	text-align: center;
-	margin-bottom: 5rem;
+	margin-bottom: 3rem;
 	color: #f8cd51;
 }
 .text {
@@ -64,24 +67,59 @@ body {
 	color: #fff;
 	max-width: 300px;
 	min-height: 50px;
-	width: 38%;
 	border-radius: 4px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 16px 32px;
 	margin: 0 auto;
 	transition: all 0.5s;
+	cursor: pointer;
 }
 
 .btn-container:hover {
 	background-color: rgb(45, 204, 205);
 }
-.btn-span {
-	transition: 0.5s;
-}
 
 .btn-text {
 	text-decoration: none;
 	font-size: 0.9rem;
+	padding: 1.5rem 2rem;
+}
+
+.form {
+	margin: 0 auto;
+	padding: 1em;
+}
+
+.form-list {
+	list-style: none;
+	padding-inline-start: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.item {
+	margin: 15px 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-submit {
+	border: none;
+	background-color: rgb(2, 132, 132);
+	color: #fff;
+	max-width: 300px;
+	min-height: 50px;
+	border-radius: 4px;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+.btn-submit:hover {
+	background-color: rgb(45, 204, 205);
 }

@@ -1,17 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static%}
+	{% load static%}
 
-<head>
-    <meta charset="UTF-8">
-    <title>UPrint from BBVA</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'estilos/estilos.css'%}">
-
-</head>
-<body>
-<-- el formulario llamara al path de formpymes que ejecuta la funcion consultaPyme-->
-
-
-
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>UPrint from BBVA</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'estilos/estilos.css'%}"
+		/>
+	</head>
+	<body class="body">
+		<header class="header">
+			<div class="logos">
+				<div class="logo-bbva">BBVA</div>
+				<div class="logo-ours">Pyladies Force One</div>
+			</div>
+		</header>
+		<section class="hero">
+			<div class="definition">
+				<div class="container">
+					<div class="title">
+						<h1>Formulario</h1>
+					</div>
+					<div class="form-container">
+						<form method="POST" class="form">
+							<ul class="form-list">
+								<li class="item name">
+									<label for="name"
+										>Nombre de la empresa <span class="asterisk">*</span> </label
+									>
+									<input
+										placeholder="Nombre..."
+										type="text"
+										id="name"
+										name="name"
+										required
+									/>
+								</li>
+								<li class="item empleados">
+									<label for="empleados"
+										>Número de empleados <span class="asterisk">*</span> </label
+									>
+									<input
+										placeholder="Número de empleados..."
+										type="number"
+										id="empleados"
+										name="empleados"
+										required
+									/>
+								</li>
+								<li class="item sector">
+									<label for="sector"
+										>Sector de la empresa <span class="asterisk">*</span> </label
+									>
+									<input
+										placeholder="Sector..."
+										type="text"
+										id="sector"
+										name="sector"
+										required
+									/>
+								</li>
+								<li class="item luz">
+									<label for="luz"
+										>Consumo de luz <span class="asterisk">*</span> </label
+									>
+									<input
+										placeholder="Consumo de luz.."
+										type="number"
+										id="luz"
+										name="luz"
+										required
+									/>
+								</li>
+								<li class="item agua">
+									<label for="agua"
+										>Consumo de agua <span class="asterisk">*</span> </label
+									>
+									<input
+										placeholder="Consumo de agua.."
+										type="number"
+										id="agua"
+										name="agua"
+										required
+									/>
+								</li>
+								<li class="item gas">
+									<label for="gas"
+										>Consumo de gas <span class="asterisk">*</span> </label
+									>
+									<input
+										placeholder="Consumo de gas.."
+										type="number"
+										id="gas"
+										name="gas"
+										required
+									/>
+								</li>
+								<li>
+									<small
+										><span class="asterisk">*</span> Campo obligatorio</small
+									>
+								</li>
+								<li class="item btn">
+									<input type="submit" class="btn-submit" value="Resultados"></input>
+								</li>
+							</ul>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>
