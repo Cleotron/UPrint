@@ -15,12 +15,16 @@ class Pyme:
         huella = h_luz + h_agua + h_gas
 
         return huella, h_luz, h_agua, h_gas
-"""
-    def compararHuella(self, sector):
-        self.huella
-        #conectamos con la bd para comparar la huella de nuestra pyme con la media del sector
-        connection = 
-"""
+
+    def mediaSector(sector):
+
+        media_gas = Pyme_DB.objects.filter(giro=sector).aggregate(Avg('l_gas'))
+        media_agua = Pyme_DB.objects.filter(giro=sector).aggregate(Avg('l_agua'))
+        media_luz = Pyme_DB.objects.filter(giro=sector).aggregate(Avg('kW'))
+
+        media_sector = gas + agua + elect
+        
+        return media_sector, media_luz, media_agua, media_gas
 
 
 class Pyme_DB(models.Model):
@@ -34,27 +38,3 @@ class Pyme_DB(models.Model):
     l_gas = models.IntegerField()
     coste_gas = models.FloatField()
 
-"""
-import cx_Oracle
-
-class Consumo:
-    def __init__(self):
-        self.connection = cx_Oracle.connect("system", "password", "localhost/XE")
-
-    def altaConsumo(self, args):
-        cursor = self.connection.cursor()
-
-        # name, empleados, sector, consumo_luz, consumo_agua, consumo_gas
-        try:
-            alta = ("Select from tabla (:p1, :p2, :p3, :p4, :p5, :p6) where GIRO=''")
-            cursor.execute(alta, args)
-            reg = cursor.rowcount
-            if reg>0:
-                print("Hemos guardado sus datos correctamente")
-                self.connection.commit()
-
-        except self.connection.Error as error:
-            print("Error: ", error)
-
-        return reg
-"""

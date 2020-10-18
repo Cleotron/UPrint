@@ -25,7 +25,7 @@ def consultaPyme(request):
 
     pyme = Pyme()
     (huella, h_luz, h_agua, h_gas) = pyme.calcularHuella(args)
-    (media_luz, media_agua, media_gas) = pyme.mediaSector(sector)
+    (media_sector, media_luz, media_agua, media_gas) = pyme.mediaSector(sector)
 
 
     contexto = {
@@ -33,7 +33,7 @@ def consultaPyme(request):
         'huella_luz':h_luz,
         'huella_agua':h_agua,
         'huella_gas':h_gas,
-
+        'media_sector': media_sector,
         'sector_luz': media_luz,
         'sector_agua': media_agua,
         'sector_gas': media_gas,
@@ -41,9 +41,3 @@ def consultaPyme(request):
     }
     return render(request, "pymes/huella.html", contexto)
 
-def mediaSector(sector):
-    gas = Pyme_DB.objects.filter(giro= sector).aggregate(Avg('l_gas'))
-    agua = Pyme_DB.objects.filter(giro= sector).aggregate(Avg('l_agua'))
-    elect = Pyme_DB.objects.filter(giro= sector).aggregate(Avg('kW'))
-
-    return gas + agua + elect
