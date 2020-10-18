@@ -24,7 +24,7 @@ def consultaPyme(request):
 
     pyme = Pyme()
     (huella, h_luz, h_agua, h_gas) = pyme.calcularHuella(args)
-    ( media_luz, media_agua, media_gas) = ()#sector.mediaSector(args)
+    (media_luz, media_agua, media_gas) = ()#sector.mediaSector(args)
 
     contexto = {
         'resultado': huella,
@@ -33,8 +33,8 @@ def consultaPyme(request):
         'huella_gas':h_gas,
 
         'sector_luz': media_luz,
-        'sector_luz': media_agua,
-        'sector_luz': media_gas,
+        'sector_agua': media_agua,
+        'sector_gas': media_gas,
 
     }
     return render(request, "pymes/huella.html", contexto)
