@@ -8,9 +8,13 @@ class Pyme:
 
     def calcularHuella(self,args):
         # calculamos la huella de la pyme con el consumo que nos proporciona el usuario multiplicado por el factor
-        huella = args[0]*0.001*0.505 + args[1]*1 + args[2]*1
+        h_luz = args[0]*0.001*0.505
+        h_agua = args[1]*1
+        h_gas=args[2]*1
 
-        return huella
+        huella = h_luz + h_agua + h_gas
+
+        return huella, h_luz, h_agua, h_gas
 """
     def compararHuella(self, sector):
         self.huella
@@ -42,7 +46,7 @@ class Consumo:
 
         # name, empleados, sector, consumo_luz, consumo_agua, consumo_gas
         try:
-            alta = ("INSERT INTO tabla VALUES(:p1, :p2, :p3, :p4, :p5, :p6)")
+            alta = ("Select from tabla (:p1, :p2, :p3, :p4, :p5, :p6) where GIRO=''")
             cursor.execute(alta, args)
             reg = cursor.rowcount
             if reg>0:
