@@ -22,7 +22,7 @@ class Pyme:
         media_agua = Pyme_DB.objects.filter(giro=sector).aggregate(Avg('l_agua'))*6
         media_luz = Pyme_DB.objects.filter(giro=sector).aggregate(Avg('kW'))*0.001*0.505*12
 
-        media_sector = gas + agua + elect
+        media_sector = media_gas + media_agua + media_luz
         
         return media_sector, media_luz, media_agua, media_gas
 

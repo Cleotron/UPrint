@@ -15,9 +15,9 @@ def consultaPyme(request):
     empleados = int(request.POST['empleados'])
     sector = request.POST['sector']
 
-    consumo_luz = request.POST['luz']
-    consumo_agua = request.POST['agua']
-    consumo_gas = request.POST['gas']
+    consumo_luz = int(request.POST['luz'])
+    consumo_agua = int(request.POST['agua'])
+    consumo_gas = int(request.POST['gas'])
     #con el numero de empleados podemos saber el tipo de empresa (micro, pequeña, mediana, gran empresa)
 
     #args = (empleados, sector, consumo_luz, consumo_agua, consumo_gas)
