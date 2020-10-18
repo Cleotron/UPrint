@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from uprintapp.models import Pyme
 from datetime import datetime
+from django.db.models import Avg
 
 def index(request):
     # Esta es la home, donde ofrecemos algo de informacion sobre la huella de carbono
@@ -24,7 +25,8 @@ def consultaPyme(request):
 
     pyme = Pyme()
     (huella, h_luz, h_agua, h_gas) = pyme.calcularHuella(args)
-    (media_luz, media_agua, media_gas) = ()#sector.mediaSector(args)
+    (media_luz, media_agua, media_gas) = mediaSector(sector)
+
 
     contexto = {
         'resultado': huella,
@@ -39,3 +41,9 @@ def consultaPyme(request):
     }
     return render(request, "pymes/huella.html", contexto)
 
+def mediaSector(sector):
+    gas = Pyme_DB.objects.filter(giro= sector).aggregate(Avg('l_gas'))
+    agua = Pyme_DB.objects.filter(giro= sector).aggregate(Avg('l_agua'))
+    elect = Pyme_DB.objects.filter(giro= sector).aggregate(Avg('kW'))
+
+    return gas + agua + elect
