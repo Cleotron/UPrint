@@ -12,8 +12,7 @@ def formulario(request):
     return render(request, "pymes/form-pymes.html")
 
 def consultaPyme(request):
-    sector = request.POST['sector']
-    empleados = request.POST['empleados']
+    empleados = int(request.POST['empleados'])
     sector = request.POST['sector']
 
     consumo_luz = request.POST['luz']
