@@ -4,12 +4,13 @@ body {
 	font-family: "Montserrat", sans-serif;
 	font-size: 14px;
 	margin: 0;
-	color: #fff;
+	color: black;
 }
 
 .header {
 	min-height: 100px;
 	background-color: #072146;
+	color: #fff;
 }
 .logos {
 	font-size: 1.2rem;
@@ -22,26 +23,32 @@ body {
 	align-items: center;
 }
 
+.logo-app {
+	font-weight: 700;
+	color: lightskyblue;
+}
 .hero {
-	background-color: #033263;
+	background-color: #fff;
 	min-height: 100vh;
-	/* font-size: 1.4rem; */
 }
 
+.grey {
+	min-height: 200px;
+	background-color: lightgray;
+}
 .definition {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
 	max-width: 70%;
-
 	margin: 0 auto;
 }
 
 .container {
 	min-height: 60vh;
 	min-width: 100%;
-	background-color: #072146;
+
 	padding: 0 20px 10px;
 	border-radius: 1em;
 }
@@ -51,7 +58,6 @@ body {
 	font-weight: 700;
 	text-align: center;
 	margin-bottom: 3rem;
-	color: #f8cd51;
 }
 .text {
 	text-align: justify;
@@ -59,9 +65,14 @@ body {
 }
 
 .link {
-	color: #ffffff;
+	color: black;
 }
 
+.link1 {
+	color: #fff;
+	font-weight: 700;
+	font-size: 1.5rem;
+}
 .btn-container {
 	background-color: rgb(2, 132, 132);
 	color: #fff;
@@ -122,4 +133,10 @@ body {
 
 .btn-submit:hover {
 	background-color: rgb(45, 204, 205);
+}
+
+.footer {
+	min-height: 100px;
+	background-color: #072146;
+	color: #fff;
 }
