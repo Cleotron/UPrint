@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import Avg
+
 
 class Pyme:
 
@@ -16,7 +18,7 @@ class Pyme:
 
         return huella, h_luz, h_agua, h_gas
 
-    def mediaSector(sector):
+    def mediaSector(self, sector):
 
         media_gas = Pyme_DB.objects.filter(giro=sector).aggregate(Avg('l_gas'))*11.7*12
         media_agua = Pyme_DB.objects.filter(giro=sector).aggregate(Avg('l_agua'))*6

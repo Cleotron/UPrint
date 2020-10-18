@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from uprintapp.models import Pyme
 from datetime import datetime
-from django.db.models import Avg
 
 def index(request):
     # Esta es la home, donde ofrecemos algo de informacion sobre la huella de carbono
