@@ -19,12 +19,6 @@ def consultaPyme(request):
     consumo_gas = int(request.POST['gas'])
     #con el numero de empleados podemos saber el tipo de empresa (micro, pequeña, mediana, gran empresa)
 
-<<<<<<< Updated upstream
-    #args = (empleados, sector, consumo_luz, consumo_agua, consumo_gas)
-=======
-    args = (name, empleados, sector, consumo_luz, consumo_agua, consumo_gas)
->>>>>>> Stashed changes
-
     pyme = Pyme()
     (huella, h_luz, h_agua, h_gas) = pyme.calcularHuella(empleados, consumo_luz, consumo_agua, consumo_gas)
     (media_sector, media_luz, media_agua, media_gas) = pyme.mediaSector(sector)
