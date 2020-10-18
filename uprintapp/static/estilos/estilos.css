@@ -45,10 +45,20 @@ body {
 	margin: 0 auto;
 }
 
+.form-pyme-container {
+	max-width: 90%;
+	min-height: 100vh;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+.text-form {
+	text-align: justify;
+}
+
 .container {
 	min-height: 60vh;
 	min-width: 100%;
-
 	padding: 0 20px 10px;
 	border-radius: 1em;
 }
@@ -56,7 +66,7 @@ body {
 .title {
 	font-size: 1.5rem;
 	font-weight: 700;
-	text-align: center;
+	text-align: left;
 	margin-bottom: 3rem;
 }
 .text {
@@ -106,25 +116,18 @@ body {
 	list-style: none;
 	padding-inline-start: 0;
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 }
 
 .item {
 	margin: 15px 0;
 	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .btn-submit {
 	border: none;
 	background-color: rgb(2, 132, 132);
 	color: #fff;
-	max-width: 300px;
+	min-width: 300px;
 	min-height: 50px;
 	border-radius: 4px;
 	transition: all 0.5s;

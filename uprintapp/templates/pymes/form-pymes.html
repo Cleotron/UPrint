@@ -23,27 +23,19 @@
 			</div>
 		</header>
 		<section class="hero">
-			<div class="definition">
+			<div class="form-pyme-container">
+				<div class="text-form">
+					<p>Para poder calcular la huella de carbono que tu negocio genera anualmente vamos a necesitar algunos datos del consumo. Estos datos no se guardarán y unicamente
+						se utilizarán para calcular la huella. Esta informacion la puedes consultar en tu factura de la luz, agua o gas.</p>
+				</div>
 				<div class="container">
 					<div class="title">
-						<h1>Formulario</h1>
+						<h1>Calcula tu huella de carbono</h1>
 					</div>
 					<div class="form-container">
 						<form action = "formpymes" method="POST" class="form">
 							{% csrf_token %}
 							<ul class="form-list">
-								<li class="item name">
-									<label for="name"
-										>Nombre de la empresa <span class="asterisk">*</span> </label
-									>
-									<input
-										placeholder="Nombre..."
-										type="text"
-										id="name"
-										name="name"
-										required
-									/>
-								</li>
 								<li class="item empleados">
 									<label for="empleados"
 										>Número de empleados <span class="asterisk">*</span> </label
@@ -60,13 +52,13 @@
 									<label for="sector"
 										>Sector de la empresa <span class="asterisk">*</span> </label
 									>
-									<input
-										placeholder="Sector..."
-										type="text"
-										id="sector"
-										name="sector"
-										required
-									/>
+									<select name="sector" id="sector" required>
+										<option value="Comercial">Comercial</option>
+										<option value="Comercialización y distribución de bebidas y aperitivos">Comercialización y distribución de bebidas y aperitivos</option>
+										<option value="Industrial">Industrial</option>
+										<option value="Telecomunicaciones">Telecomunicaciones</option>
+									</select>
+				
 								</li>
 								<li class="item luz">
 									<label for="luz"
@@ -110,7 +102,7 @@
 									>
 								</li>
 								<li class="item btn">
-									<input type="submit" class="btn-submit" value="Resultados"></input>
+									<input type="submit" class="btn-submit" value="Calcular"></input>
 								</li>
 							</ul>
 						</form>
